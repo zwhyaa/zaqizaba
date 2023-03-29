@@ -1,0 +1,10 @@
+host, www.bingapis.com, Bing
+host, gateway.bingviz.microsoftapp.net, Bing
+host, services.bingapis.com, Bing
+host-suffix, bing.com, Bing
+host-suffix, challenges.cloudflare.com, Bing
+host-suffix, ai.com, Bing
+host-suffix, platform.openai.com, Bing
+host-suffix, auth0.openai.com, Bing
+host-suffix, chat.openai.com, Bing
+host-suffix, openai.com, Bing
