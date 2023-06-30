@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN-SUFFIX,luogou.cf
+  - DOMAIN-KEYWORD,luogou
+  - IP-CIDR,143.110.238.15/32,DIRECT,no-resolve
