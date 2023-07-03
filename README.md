@@ -1,1 +1,1 @@
-# QuantumultX-Rewrite
+# 自用
