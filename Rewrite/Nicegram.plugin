@@ -1,7 +1,7 @@
 #!name=Nicegram
 #!desc=Nicegram会员解锁
 #!author=yu9191
-#!icon=https://github.com/deezertidal/private/blob/main/icons/nicegram.png
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/nicegram.png
 [MITM]
 hostname = nicegram.cloud
 [Script]
