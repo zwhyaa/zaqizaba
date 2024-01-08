@@ -1,0 +1,17 @@
+#!name=酷安去广告
+#!desc=过滤酷安广告
+#!author=RuCu6
+#!date=2023-11-15 17:20:55
+
+[MITM]
+hostname = %APPEND% api.coolapk.com
+
+[Map Local]
+^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[Script]
+移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script//CoolApk/CoolApk_remove_ads.js, requires-body=true
+
+移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script//CoolApk/CoolApk_remove_ads.js, requires-body=true
+
+移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script//CoolApk/CoolApk_remove_ads.js, requires-body=true
