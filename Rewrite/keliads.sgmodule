@@ -92,8 +92,6 @@ DOMAIN,data.mistat.xiaomi.com,REJECT
 DOMAIN,tracking.intl.miui.com,REJECT
 # 米家
 DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
-# TubeMax搜索栏广告
-DOMAIN-SUFFIX,applovin.com,REJECT
 # 通用广告
 DOMAIN-SUFFIX,doubleclick-cn.net,REJECT
 DOMAIN-SUFFIX,doubleclick.net,REJECT
@@ -110,52 +108,10 @@ IP-CIDR,122.229.8.47/32,REJECT
 IP-CIDR,122.229.29.89/32,REJECT
 # 弃用地址
 DOMAIN,waapdg.jd.com,REJECT
-# 小象买菜 - 兜底TCP请求下发广告
-IP-CIDR,101.50.8.64/32,REJECT,no-resolve
-IP-CIDR,101.50.8.75/32,REJECT,no-resolve
-IP-CIDR,103.37.152.161/32,REJECT,no-resolve
-IP-CIDR,103.37.152.162/32,REJECT,no-resolve
-IP-CIDR,103.63.160.64/32,REJECT,no-resolve
-IP-CIDR,119.29.48.215/32,REJECT,no-resolve
-IP-CIDR,119.29.48.215/32,REJECT,no-resolve
-IP-CIDR,202.90.110.8/32,REJECT,no-resolve
-IP-CIDR,203.76.217.241/32,REJECT,no-resolve
-IP-CIDR,203.76.217.243/32,REJECT,no-resolve
-IP-CIDR,203.76.217.37/32,REJECT,no-resolve
-IP-CIDR6,2405:1480:3000:303f::303f/128,REJECT,no-resolve
 
 [URL Rewrite]
-# 摩托范弹窗广告
-^https?:\/\/api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk - reject
-# 最右
-^http:\/\/mercury-gateway\.ixiaochuan\.cn\/mercury\/v1\/ad\/ - reject
-#网易新闻
-^https?:\/\/interface\.music\.163\.com\/eapi\/ad - reject
-^https?:\/\/c\.m\.163\.com\/nc\/gl\/ - reject
-^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/searchMultiAds - reject
-^https?:\/\/g1\.163\.com\/madfeedback - reject
-^https?:\/\/nex\.163\.com\/q - reject
-^https?:\/\/interface\.music\.163\.com\/eapi\/ad\/ - reject
-^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json - reject
-^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|search/(specialkeyword|defaultkeyword|hot)) - reject
-^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner - reject
-^https?:\/\/(api-mifit|api-mifit-\w+)\.huami\.com\/discovery\/mi\/discovery\/\w+_ad\? - reject
 # 小米运动
 ^https:\/\/api-mifit-cn2\.huami\.com\/discovery\/mi\/cards\/startpage_ad - reject
-# 米读
-^https:\/\/apiwz\.midukanshu\.com\/advert\/getPopup$ - reject
-^https:\/\/apiwz\.midukanshu\.com\/advert\/treasureInfo$ - reject
-^https:\/\/apiwz\.midukanshu\.com\/config\/getAds$ - reject
-# 有兔阅读（米兔）
-^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg - reject
-^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg - reject
-^http:\/\/img\.dailmo\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg - reject
-^http:\/\/img\.dailmo\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg - reject
-^http:\/\/img\.allahall\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg - reject
-^http:\/\/img\.allahall\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg - reject
-^http:\/\/img\.allahall\.com\/img\/6\/90585d9e96c73dd49644af57d8501624\.jpg - reject
-^http:\/\/img\.allahall\.com\/img\/5\/6cb2aa237ce1f65944aa1ecb29fbdeef\.jpg - reject
-^http:\/\/img\.allahall\.com\/img\/59\/6a13a75dfe46ebfdac96bd27ef098885\.jpg - reject
 # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
@@ -166,8 +122,6 @@ IP-CIDR6,2405:1480:3000:303f::303f/128,REJECT,no-resolve
 # 钱包推广 m.qianbao.qq.com
 ^https?:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\?invisible - reject
 ^https?:\/\/m\.qianbao\.qq\.com\/pages\/walletHome\?invisible - reject
-# 猫耳FM - 开屏广告 app.missevan.com
-^https:\/\/app\.missevan\.com\/site\/launch\? - reject
 # 首页悬浮标签
 ^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 # 我的页面轮播图
@@ -177,17 +131,6 @@ IP-CIDR6,2405:1480:3000:303f::303f/128,REJECT,no-resolve
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList - reject
 # 多个悬浮窗 感谢#热心网友分享
 ^https:\/\/(client\.app\.coc|h\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket - reject
-# 广西移动 //gx.10086.cn
-^https?:\/\/gx\.10086\.cn\/zt-portal\/gxhzg\/portal\/app\/api\/v - reject
-# 安徽移动 //api.ahmobile.cn
-^https?:\/\/api\.ahmobile\.cn:443\/eip\?eip_serv_id=app\.getAllNew - reject
-^https?:\/\/wap\.js\.10086\.cn\/jsmccClient\/cd\/market_content\/api\/v\d\/market_content\.page\.query - reject
-# 网易大神 god.gameyw.netease.com @可莉🅥
-^https:\/\/god\.gameyw\.netease\.com\/v1\/ad - reject
-^https?:\/\/tower\.ubixioe\.com\/mob\/mediation - reject
-^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com - reject
-# 威锋 - 开屏广告
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList - reject
 
 [Map Local]
 # 米家
@@ -249,54 +192,14 @@ IP-CIDR6,2405:1480:3000:303f::303f/128,REJECT,no-resolve
 # 首页左上角福利中心
 ^https:\/\/dict\.youdao\.com\/dictusertask\/system data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
-# 广东移动 //gd.10086.cn
-^https?:\/\/gd\.10086\.cn\/gmccapp\/serv\/\?servicename=GMCCAPP_704_002_001_001 data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-# 山东移动 //m.sd.10086.cn
-https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome\.do data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# 江苏移动 //wap.js.10086.cn
-^https?:\/\/wap\.js\.10086\.cn\/jsmccClient\/cd\/market_content\/api\/v1\/market_content\.page\.queryHasIt data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# 深圳通
-^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
 # 手机QQ
 ^https:\/\/v6ii\.gdt\.qq\.com\/api\/gdt\.display\.QQAdService\.GetAds data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# 埋堆堆 @Kuraki //sfo.mddcloud.com.cn, mob.mddcloud.com.cn, toblog.ctobsnssdk.com, t-dsp.pinduoduo.com, mobads-pre-config.cdn.bcebos.com, sdk1xyajs.data.kuiniuca.com, conf-darwin.xycdn.com, *.ubixioe.com
-^https?:\/\/mob\.mddcloud\.com\.cn\/adApi\/advert\/(first|third)part\/advertList data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https?:\/\/t-dsp\.pinduoduo\.com data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-^http?:\/\/sfo\.mddcloud\.com\.cn\/api\/v2\/sfo\/popup_displays? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-^https?:\/\/toblog\.ctobsnssdk\.com data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
-
-^https?:\/\/conf-darwin\.xycdn\.com data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# 小象超市 - 开屏广告
-^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/splash data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-# 小象超市 - 首页领券悬浮红包
-^https:\/\/mall\.meituan\.com\/api\/c\/homepage\/bubble\/operate\/info data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # 闲鱼 - 开屏广告
 ^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 # 闲鱼 - 底部浮层发布球
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.get\/ data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-#向日葵 #开屏广告 #主机名client-api-v2.oray.com
-^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-#向日葵 #首页文字广告
-^https:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
-
-#向日葵 #发现页广告
-^https:\/\/client-api-v2\.oray\.com\/materials\/SUNLOGIN_CLIENT_IOS_PROMOTION data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
 [Script]
 # 快手联盟、腾讯优量汇、字节跳动穿山甲
