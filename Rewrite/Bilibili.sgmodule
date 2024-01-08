@@ -1,5 +1,5 @@
 #!name=Bilibili去广告
-#!desc=此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。
+#!desc=iOS15以上，且必须启用MitM-over-HTTP/2功能。
 #!author=Maasea RuCu6
 #!date=2024-01-06 12:10:27
 
