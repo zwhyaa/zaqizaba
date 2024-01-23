@@ -1,10 +1,7 @@
 #!name=Bilibili去广告
 #!desc=iOS15以上 启用MitM-over-HTTP/2
 #!author=Maasea RuCu6
-#!date=2024-01-06 12:10:27
-
-[MITM]
-hostname = %APPEND% app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
+#!date=2024-01-16 19:48:54
 
 [Rule]
 # 开屏广告
@@ -18,6 +15,10 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF
 ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords - reject
 # IP请求、地理位置请求 //api.bilibili.com
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+# 移除视频链接跟踪参数
+((^https:\/\/(www|m)\.bilibili\.com\/video\/((BV\w{10})|(av\d{9}))))((\/\?buvid=.*)|(\/\?share_source=.*)|(\?p=.*)) $1 302
+# 移除直播间链接跟踪参数
+(^https:\/\/live\.bilibili\.com\/\d+)((\?broadcast_type.*)|(\?launch_id.*)) $1 302
 
 [Map Local]
 # 开屏广告
@@ -102,3 +103,6 @@ URL-REGEX,^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH,REJECT-TINYGIF
 
 # 解锁4K画质及1080P高码率 //app.bilibili.com
 画质解锁 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_remove_ads.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com
