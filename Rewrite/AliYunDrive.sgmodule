@@ -1,15 +1,15 @@
 #!name=阿里云盘去广告
 #!desc=移除首页的手机备份等板块入口
 #!author=RuCu6
-#!date=2023-11-12 16:42:05
-
-[MITM]
-hostname = %APPEND% api.alipan.com, member.alipan.com
+#!date=2024-01-25 18:03:14
 
 [Rule]
 IP-CIDR,203.107.1.1/24,REJECT,no-resolve
 
 [Map Local]
+# ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_info reject-dict
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
 # 首页板块入口
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 
@@ -17,3 +17,6 @@ IP-CIDR,203.107.1.1/24,REJECT,no-resolve
 移除阿里云盘广告 = type=http-response, pattern=^https:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js, requires-body=true
 
 移除阿里云盘广告 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/AliYunDrive/AliYunDrive_remove_ads.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% api.alipan.com, member.alipan.com
