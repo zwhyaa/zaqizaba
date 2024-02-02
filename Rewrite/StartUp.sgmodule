@@ -1,0 +1,11 @@
+[URL Rewrite]
+# 建行生活
+^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(2|9) - reject
+# 建设银行
+^https?:\/\/adv\.ccb\.com\/ebda\/ctm_adv - reject
+# 移动云盘
+^https:\/\/mrp\.mcloud\.139\.com\/mc\/mc-client-service\/openapi\/letter\/query - reject
+^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos$ - reject
+
+[MITM]
+hostname = %APPEND% adv.ccb.com, yunbusiness.ccb.com, ad.mcloud.139.com, ad.mcloud.139.com
