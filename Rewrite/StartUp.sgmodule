@@ -1,3 +1,8 @@
+#!name = 开屏广告
+#!desc = 自用的开屏广告过滤器
+#!date = 2024-02-02
+
+
 [URL Rewrite]
 # 建行生活
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(2|9) - reject
